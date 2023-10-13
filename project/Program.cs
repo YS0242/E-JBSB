@@ -15,6 +15,16 @@ builder.Services.AddDbContext<MyDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyDBConnection"));
 });//DB Connection Config.(MSSQL)
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Cors", p =>
+        {
+            p.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,9 +34,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("Cors");
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
 

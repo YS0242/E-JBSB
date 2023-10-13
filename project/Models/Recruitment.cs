@@ -10,25 +10,30 @@ namespace project.Models
         public int RecruitmentID { get; set; }
 
         [Required]
-        public string RecruitmentPoster { get; set; }
+        public string? StaffID { get; set; }
 
         [Required]
         public int StuNumReq { get; set; }// Number of students required
 
         [Required]
-        public string JobShiftDate { get; set; }// Job shift date
+        public string? JobShiftDate { get; set; }// Job shift date
 
         [Required]
-		public string StartTime { get; set; }// Job shift start time
+		public string? StartTime { get; set; }// Job shift start time
 
         [Required]
-		public string EndTime { get; set; }// Job shift end time
+		public string? EndTime { get; set; }// Job shift end time
 
         [Required]
-		public string JobDescription { get; set; }// Job description
+        public string? JobLocation { get; set; }// Job location
+
+        [Required]
+		public string? JobDescription { get; set; }// Job description
 
         [Required]
 		public int IsFCFS { get; set; }// Is first come first serve?
+
+        public int StuNumReqRemain { get; set; }//Total number of students required
 
        
 
