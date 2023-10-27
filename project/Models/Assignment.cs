@@ -9,7 +9,7 @@ namespace project.Models
 		{
 		}
 
-		[Key]
+		
 		public int RecruitmentID { get; set; }
 
 		public int StudentID { get; set; }

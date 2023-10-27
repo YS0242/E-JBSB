@@ -32,6 +32,7 @@ namespace project.Models
 
         [Required]
 		public int IsFCFS { get; set; }// Is first come first serve?
+        //If isFCFS == 1, need approval, else straight register student into Assignment Table
 
         public int StuNumReqRemain { get; set; }//Total number of students required
 

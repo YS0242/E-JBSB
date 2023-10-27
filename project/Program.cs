@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using project.Models.Data;
+using project.Repositories;
+using project.Repository;
+using project.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +28,10 @@ builder.Services.AddCors(options =>
         });
 });
 
+// ###Register your repository and service
+builder.Services.AddScoped<IRecruitmentRepository, RecruitmentRepository>();
+builder.Services.AddScoped<IRecruitmentService, RecruitmentService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,3 +50,4 @@ app.MapControllers();
 app.Run();
 
 
+//Repo @ Service

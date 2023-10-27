@@ -21,7 +21,7 @@ namespace project.Controllers
             _myDBContext = myDBContext;
         }
 
-        //Allow students to apply for job
+        //Function 2 - Allow students to apply for job
         [HttpPost]
         public async Task<IActionResult> ApplicationRequest(Application newApplication)
         {
