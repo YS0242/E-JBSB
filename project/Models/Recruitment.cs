@@ -16,13 +16,13 @@ namespace project.Models
         public int StuNumReq { get; set; }// Number of students required
 
         [Required]
-        public string? JobShiftDate { get; set; }// Job shift date
+        public DateOnly? JobShiftDate { get; set; }// Job shift date
 
         [Required]
-		public string? StartTime { get; set; }// Job shift start time
+		public TimeOnly StartTime { get; set; }// Job shift start time
 
         [Required]
-		public string? EndTime { get; set; }// Job shift end time
+        public TimeOnly EndTime { get; set; }// Job shift end time
 
         [Required]
         public string? JobLocation { get; set; }// Job location

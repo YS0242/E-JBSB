@@ -1,15 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using project.Models.Data;
+using project.Repositories;
+using project.Repository;
+using project.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddScoped<IRecruitmentService, RecruitmentService>();
+builder.Services.AddScoped<IRecruitmentRepository, RecruitmentRepository>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+//builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddDbContext<MyDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyDBConnection"));
